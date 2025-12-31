@@ -162,7 +162,7 @@ function startTyping() {
   const el = document.getElementById("letterText");
   if(el.textContent.length>0) return;
 
-  const message=`Biriciğim, seni çok seviyorum. Hayatıma girdiğin gün anladım ki sensiz geçen zamanın aslında hiçbir anlamı yokmuş. Sen gelip hayatıma sanki sihirli bir değnek dokundun. Bana hissettirdiğin her güzel duygu, verdiğin güven, asla esirgemediğin destek, bana karşı duyduğun saygı ve büyük aşkın için teşekkür ederim. Ömür boyu, senden önceki eksikliği bilerek ama seninle kurduğum bu mükemmel hayata odaklanarak yaşamayı diliyorum. Aşkım, nice mutlu beraber senelere… ❤️`;
+  const message=`Biriciğim, seni çok seviyorum. Hayatıma girdiğin gün anladım ki sensiz geçen zamanın aslında hiçbir anlamı yokmuş. Sen gelip hayatıma sanki sihirli bir değnek gibi dokundun. Bana hissettirdiğin her güzel duygu, verdiğin güven, asla esirgemediğin destek, bana karşı duyduğun saygı ve büyük aşkın için teşekkür ederim. Ömür boyu, senden önceki eksikliği bilerek ama seninle kurduğum bu mükemmel hayata odaklanarak yaşamayı diliyorum. Aşkım, nice mutlu beraber senelere… ❤️`;
 
   let i = 0;
   const cursor = document.createElement('span');
