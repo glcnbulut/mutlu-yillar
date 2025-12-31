@@ -200,7 +200,6 @@ function startTyping() {
     }
   }, 80); // 40'tan 80'e çıkarıldı - daha yavaş
 }
-}
 
 /* ================================
    ❄️ KAR YAĞIŞI
