@@ -1,0 +1,255 @@
+body {
+  height: 100vh;
+  background: radial-gradient(circle at top, #8b0000, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* BAŞLANGIÇ KARTI */
+.card {
+  background: linear-gradient(145deg, #c1121f, #780000);
+  padding: 45px;
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(255,0,0,0.4);
+  animation: pulse 2.5s infinite;
+  
+}
+
+/* HEDİYE KUTUSU */
+.gift-box {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  animation: zoomIn 1.5s ease forwards;
+}
+
+.gift-box img {
+   width: 300px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 25px rgba(255, 215, 100, 0.6));
+}
+
+.click-text {
+  margin-top: 15px;
+  opacity: 0.8;
+}
+
+/* IŞIK EFEKTİ */
+.light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, rgba(255,255,200,0.9), rgba(255,255,200,0));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.light.active {
+  animation: glow 1.2s ease-out forwards;
+}
+
+/* GİZLE */
+.hidden {
+  display: none;
+}
+
+/* ANİMASYONLAR */
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(15);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(25);
+  }
+}
+
+/* KUTU KAPAĞI */
+.box-lid {
+  width: 320px;
+  transform-origin: top center;
+  transition: transform 1.2s ease;
+  z-index: 2;
+}
+
+/* KUTU AÇILDI */
+.box-lid.open {
+  transform: rotateX(120deg);
+}
+
+#giftWrapper {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  cursor: pointer;
+  margin: auto;
+}
+
+.card {
+  transition: opacity 0.5s ease;
+}
+
+.piece {
+  position: absolute;
+  background-image: url("assets/gift-box.png");
+  background-size: 500px 500px;
+  transition: transform 2.5s ease-out, opacity 2.5s ease-out;
+}
+
+.light:nth-child(1) { top: 30%; left: 30%; }
+.light:nth-child(2) { top: 30%; left: 70%; }
+.light:nth-child(3) { top: 70%; left: 30%; }
+.light:nth-child(4) { top: 70%; left: 70%; }
+
+/* ZARF - ORTAYA ÇIKSIN */
+#envelope {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 650px;
+  width: 90%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#envelope:not(.hidden) {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  font-size: 14px;
+  opacity: 0.8;
+  pointer-events: none;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* FOTOĞRAF KART */
+#photoContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+  cursor: pointer;
+}
+
+#photoContainer.hidden {
+  display: none;
+}
+
+#photoContainer:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#photoCard {
+  background: #f4e4c1;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(255, 215, 100, 0.6);
+  text-align: center;
+  max-width: 650px;
+  width: 90%;
+}
+
+#photoCard img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#letterText {
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: justify;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  color: #2d3436;
+  word-wrap: break-word;
+  padding: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* FADE + ZOOM ANİMASYONU */
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#photoContainer:not(.hidden) #photoCard {
+  animation: fadeZoomIn 1.8s ease forwards;
+}
+
+/* ZARF KAYBOLMA ANİMASYONU */
+@keyframes envelopeDisappear {
+  0% {
+    transform: translate(-50%, -50%) scale(1.2) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+

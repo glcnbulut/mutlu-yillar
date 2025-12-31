@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mutlu Yıllar ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🎵 ARKA PLAN MÜZİĞİ -->
+  <audio id="bgMusic" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- BAŞLANGIÇ KARTI -->
+  <div class="card" id="card" onclick="showGiftBox()">
+    <h1>🎄 Mutlu Yıllar Sevgilim</h1>
+    <p>Sana küçük bir sürprizim var…</p>
+    <span>Tıkla 💖</span>
+  </div>
+
+  <!-- 🎁 HEDİYE KUTUSU (PARÇALANAN PNG) -->
+  <div id="giftWrapper" class="hidden" onclick="explodeGift()">
+    <!-- IŞIK EFEKTLERİ -->
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    <div class="light"></div>
+    
+    <!-- 25 PARÇA -->
+    <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+    <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+    <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+    <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+    <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+
+    
+  </div>
+
+  <!-- ✉️ ZARF -->
+  <img src="assets/envelope.png" id="envelope" class="hidden" onclick="openEnvelope()">
+
+  <!-- 📷 FOTOĞRAF -->
+  <div id="photoContainer" class="hidden" onclick="startTyping()">
+    <div id="photoCard">
+      <img src="assets/photo.jpeg" alt="❤️">
+      <div id="letterText"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
