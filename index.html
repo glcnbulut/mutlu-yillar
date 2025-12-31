@@ -3,51 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <title>Mutlu Yıllar ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- 🔐 ŞİFRE EKRANI -->
+  <div id="passwordScreen">
+    <div class="passwordBox">
+      <h2>💖 Sana Özel</h2>
+      <p>Devam etmek için şifreyi gir</p>
+      <input type="password" id="passwordInput" placeholder="Şifre">
+      <button onclick="checkPassword()">Giriş</button>
+      <span id="passwordError"></span>
+    </div>
+  </div>
+
   <!-- 🎵 ARKA PLAN MÜZİĞİ -->
-  <audio id="bgMusic" loop>
+  <audio id="bgMusic" loop preload="auto" playsinline>
     <source src="assets/music.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- BAŞLANGIÇ KARTI -->
-  <div class="card" id="card" onclick="showGiftBox()">
+  <!--  BAŞLANGIÇ KARTI -->
+  <div class="card hidden" id="card" onclick="showGiftBox()">
     <h1>🎄 Mutlu Yıllar Sevgilim</h1>
     <p>Sana küçük bir sürprizim var…</p>
-    <span>Tıkla 💖</span>
+    <small>Tıkla 💖</small>
   </div>
 
-  <!-- 🎁 HEDİYE KUTUSU (PARÇALANAN PNG) -->
+  <!-- 🎁 HEDİYE KUTUSU -->
   <div id="giftWrapper" class="hidden" onclick="explodeGift()">
-    <!-- IŞIK EFEKTLERİ -->
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    <div class="light"></div>
-    
-    <!-- 25 PARÇA -->
-    <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
-    <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
-    <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
-    <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
-    <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
 
-    
+    <!-- 🎁 TEK PARÇA KUTU -->
+    <img src="assets/gift-box.png" id="giftImage" alt="Hediye">
+
+    <!-- ✨ YUMUŞAK IŞIK -->
+    <div class="glow"></div>
+
+    <!-- 🧩 25 PARÇA -->
+    <div class="pieces hidden">
+      <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+      <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+      <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+      <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+      <div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div><div class="piece"></div>
+    </div>
+
   </div>
 
   <!-- ✉️ ZARF -->
-  <img src="assets/envelope.png" id="envelope" class="hidden" onclick="openEnvelope()">
+  <img
+    src="assets/envelope.png"
+    id="envelope"
+    class="hidden"
+    alt="Aşk mektubu"
+    onclick="openEnvelope()"
+  >
 
-  <!-- 📷 FOTOĞRAF -->
-  <div id="photoContainer" class="hidden" onclick="startTyping()">
+  <!-- 📷 FOTOĞRAF & MEKTUP -->
+  <div id="photoContainer" class="hidden">
     <div id="photoCard">
-      <img src="assets/photo.jpeg" alt="❤️">
+      <img src="assets/photo.jpeg" alt="Biz ❤️">
       <div id="letterText"></div>
     </div>
   </div>
 
+  <!-- ❤️ KALP YAĞMURU -->
+  <div id="heartsContainer"></div>
+
+  <!-- 📜 SCRIPT -->
   <script src="script.js"></script>
 </body>
 </html>
